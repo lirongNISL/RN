@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<body>
+  <a target="_blank" href="https://reactnavigation.org/">react-navigation</a>
+  <a target="_blank" href="https://reactnavigation.org/docs/getting-started">react-navigation文档</a>
+ <div class="cl-preview-section"><h1 id="react-navigation安装适配指南">react-navigation安装适配指南</h1>
+</div><div class="cl-preview-section"><blockquote>
+<p>提示：本教程不定期更新，请关注<a href="https://coding.imooc.com/learn/list/304.html">课程章节列表</a>及时获取更新</p>
+</blockquote>
+</div><div class="cl-preview-section"><p>react-navigation从发布以来经历了1x，2x，3x，4x的重要变更，现在已经到了5x的阶段，5x相比4x支持了JSX的写法，但由于5x新发布不久，<strong>bug会比4x多一些</strong>；还有就是5x生态没有4x健全，用的公司也不是很多，遇到问题在<strong>网上能够找到的资料没有4x全</strong>，因此建议大家在4x上进行学习，然后待5x稳定了以及生态健全了之后，在通过本课程提供的<a href="https://coding.imooc.com/lesson/304.html#mid=35346">4x到5x的迁移教程</a>进行迁移。</p>
+</div><div class="cl-preview-section"><blockquote>
+<p>因为react-navigation对RN版本有要求，请确保你的RN版本是0.6x版本。</p>
+</blockquote>
+</div><div class="cl-preview-section"><h2 id="热门问答">热门问答</h2>
+</div><div class="cl-preview-section"><ol start="0">
+<li>先学习4x还是直接上手5x？
+<ul>
+<li>答：因为4x的生态以及稳定性要比5x好很多，另外，5x的思想和4x是一致的主要是写法上有所不同，4x更容易上手，并且4x还在不停的更新，现在学习的话建议从4x学起，等掌握了4x之后在按照课程提供的相关教程进行5x的学习。</li>
+<li>课程为大家准备了<a href="https://coding.imooc.com/lesson/304.html#mid=35347">5x安装使用教程</a>以及<a href="https://coding.imooc.com/lesson/304.html#mid=35346">4x到5x的迁移适配教程</a>，建议掌握了4x之后在进行5x的学习。</li>
+</ul>
+</li>
+<li>5x相比4x有哪些优缺点？
+<ul>
+<li>答：5x相比4x最大的优点是在使用的写法上支持了JSX的写法，但相比比较成熟的4x缺点还比是较明显的，主要体现在<strong>4x所支持的一些API或功能在5x还没有完全支持</strong>；另外因为5x新发布不久，<strong>bug会比4x多一些</strong>；还有就是5x生态没有4x健全，用的公司也不是很多，遇到问题在<strong>网上能够找到的资料没有4x全</strong>。</li>
+</ul>
+</li>
+<li>4x到5x迁移的迁移成本大吗？
+<ul>
+<li>答：因为5x相比4x主要是在使用上写法变了，<strong>大部分API和4x都是一致的</strong>，从现在迁移的经验上来看总体迁移成本并不大。</li>
+</ul>
+</li>
+<li>4x还在更新吗，可以不迁移到5x吗？
+<ul>
+<li>答：从React Navigation的官库上看，<strong>目前官方还一直在不停的更新4x的版本，因为目前业界大部分公司用的版本还主要集中在4x、3x上</strong>，所以除非有特殊要求需要使用5x，否则可以继续使用4x的版本。</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="cl-preview-section"><h2 id="react-navigation安装适配指南-1">react-navigation安装适配指南</h2>
+</div><div class="cl-preview-section"><h3 id="第一步：-安装主库">第一步： 安装主库</h3>
+</div><div class="cl-preview-section"><pre class="  language-bash"><code class="prism  language-bash">yarn add react-navigation
+<span class="token comment"># or with npm</span>
+<span class="token comment"># npm install react-navigation</span>
+</code></pre>
+</div><div class="cl-preview-section"><h3 id="第二步：-安装主库依赖的三方库">第二步： 安装主库依赖的三方库</h3>
+</div><div class="cl-preview-section"><p>因为新版react-navigation依赖一些第三方库，所以安装时需要同时引入：</p>
+</div><div class="cl-preview-section"><pre class="  language-bash"><code class="prism  language-bash">yarn add react-native-gesture-handler
+yarn add react-native-reanimated
+yarn add react-native-safe-area-context
+yarn add @react-native-community/masked-view
+yarn add react-native-screens
+<span class="token comment"># or with npm</span>
+<span class="token comment"># npm install react-native-gesture-handler</span>
+<span class="token comment"># npm install react-native-reanimated</span>
+<span class="token comment"># npm install react-native-safe-area-context</span>
+<span class="token comment"># npm install @react-native-community/masked-view</span>
+<span class="token comment"># npm install react-native-screens</span>
+</code></pre>
+</div><div class="cl-preview-section"><h3 id="第三步：-根据需要引入各导航组件的库">第三步： 根据需要引入各导航组件的库</h3>
+</div><div class="cl-preview-section"><pre class="  language-bash"><code class="prism  language-bash">yarn add react-navigation-stack
+yarn add react-navigation-drawer
+yarn add react-navigation-tabs
+<span class="token comment"># or with npm</span>
+<span class="token comment"># npm install react-navigation-stack</span>
+<span class="token comment"># npm install react-navigation-drawer</span>
+<span class="token comment"># npm install react-navigation-tabs</span>
+</code></pre>
+</div><div class="cl-preview-section"><h3 id="第四步：执行pod-install">第四步：执行pod install</h3>
+</div><div class="cl-preview-section"><p>为了在iOS上完成安装，还需要执行一些命令：</p>
+</div><div class="cl-preview-section"><pre class="  language-bash"><code class="prism  language-bash"><span class="token function">cd</span> ios
+pod <span class="token function">install</span>
+<span class="token function">cd</span> <span class="token punctuation">..</span>
+</code></pre>
+</div><div class="cl-preview-section"><h3 id="第五步：为react-native-screens添加相关依赖">第五步：为react-native-screens添加相关依赖</h3>
+</div><div class="cl-preview-section"><p>为了在Android上完成安装，还需要在<code>android/app/build.gradle</code>中为<code>react-native-screens</code>添加相关依赖：</p>
+</div><div class="cl-preview-section"><pre class="  language-bash"><code class="prism  language-bash">implementation <span class="token string">'androidx.appcompat:appcompat:1.1.0-rc01'</span>
+implementation <span class="token string">'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-alpha02'</span>
+</code></pre>
+</div><div class="cl-preview-section"><h3 id="第六步：配置react-native-gesture-handler">第六步：配置react-native-gesture-handler</h3>
+</div><div class="cl-preview-section"><p>为了在Android上能够使react-native-gesture-handler有效，需要修改MainActivity.java：</p>
+</div><div class="cl-preview-section"><pre class="  language-java"><code class="prism  language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>reactnavigation<span class="token punctuation">.</span>example<span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> com<span class="token punctuation">.</span>facebook<span class="token punctuation">.</span>react<span class="token punctuation">.</span>ReactActivity<span class="token punctuation">;</span>
+<span class="token operator">+</span> <span class="token keyword">import</span> com<span class="token punctuation">.</span>facebook<span class="token punctuation">.</span>react<span class="token punctuation">.</span>ReactActivityDelegate<span class="token punctuation">;</span>
+<span class="token operator">+</span> <span class="token keyword">import</span> com<span class="token punctuation">.</span>facebook<span class="token punctuation">.</span>react<span class="token punctuation">.</span>ReactRootView<span class="token punctuation">;</span>
+<span class="token operator">+</span> <span class="token keyword">import</span> com<span class="token punctuation">.</span>swmansion<span class="token punctuation">.</span>gesturehandler<span class="token punctuation">.</span>react<span class="token punctuation">.</span>RNGestureHandlerEnabledRootView<span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MainActivity</span> <span class="token keyword">extends</span> <span class="token class-name">ReactActivity</span> <span class="token punctuation">{</span>
+
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">protected</span> String <span class="token function">getMainComponentName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token string">"Example"</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+<span class="token operator">+</span>  <span class="token annotation punctuation">@Override</span>
+<span class="token operator">+</span>  <span class="token keyword">protected</span> ReactActivityDelegate <span class="token function">createReactActivityDelegate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token operator">+</span>    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">ReactActivityDelegate</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token function">getMainComponentName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token operator">+</span>      <span class="token annotation punctuation">@Override</span>
+<span class="token operator">+</span>      <span class="token keyword">protected</span> ReactRootView <span class="token function">createRootView</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token operator">+</span>       <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">RNGestureHandlerEnabledRootView</span><span class="token punctuation">(</span>MainActivity<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">+</span>      <span class="token punctuation">}</span>
+<span class="token operator">+</span>    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token operator">+</span>  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</div><div class="cl-preview-section"><h3 id="第七步：在index.js-or-app.js中导入react-native-gesture-handler">第七步：在<code>index.js</code> or <code>App.js</code>中导入<code>react-native-gesture-handler</code></h3>
+</div><div class="cl-preview-section"><pre class="  language-bash"><code class="prism  language-bash"><span class="token function">import</span> <span class="token string">'react-native-gesture-handler'</span><span class="token punctuation">;</span>
+</code></pre>
+</div>    </div>
+</body>
+</html>

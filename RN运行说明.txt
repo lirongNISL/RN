@@ -1,0 +1,46 @@
+初始化项目
+npx react-native init Demo
+查看设备，
+adb devices
+打开调试模式
+adb reverse tcp:8081 tcp:8081
+运行安卓版本
+npx react-native run-android
+运行iOS版本
+cd ios
+pod install
+cd ..
+npx react-native run-ios
+启动项目
+react-native start
+
+
+npx react-native init Demo
+adb devices
+adb reverse tcp:8081 tcp:8081
+npx react-native run-android
+npx react-native run-ios
+react-native start
+
+
+react-navigation导航安装依赖
+yarn add react-navigation react-native-gesture-handler react-native-reanimated  react-native-vector-icons react-native-safe-area-context  @react-native-community/masked-view react-native-screens react-navigation-stack  react-navigation-tabs
+
+
+引入UI组件
+https://github.com/react-native-elements/react-native-elements 
+
+例如，引入Button组件和使用
+import { Button } from 'react-native-elements';
+<Button />;
+
+icon第三方库
+yarn add react-native-vector-icons
+react-native link react-native-vector-icons 
+图标网址
+https://zamarrowski.github.io/react-ionicons
+引用图标
+import Octicons from 'react-native-vector-icons/Octicons';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
