@@ -44,3 +44,28 @@ import Octicons from 'react-native-vector-icons/Octicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+
+https://github.com/lirongNISL/RN.git
+
+
+github本地上传
+1…or create a new repository on the command line
+echo "# RN" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/lirongNISL/RN.git
+git push -u origin master
+
+2…or push an existing repository from the command line
+git remote add origin https://github.com/lirongNISL/RN.git
+git push -u origin master
+
+
+3…or import code from another repository
+
+
+git add .
+git commit  -m  "提交信息" 
+git remote add origin https://github.com/lirongNISL/RN.git
+git push -u origin master
